@@ -8,11 +8,12 @@
 <p><center><img src="images/diagram.png" style="width:100%;"/><figcaption>
 Figura 1. Modelo conceptual de la ontología</figcaption></center></p> 
 
-<p>A continuación mostramos un ejemplo en RDF usando la notación RDF Turtle, que describe una observación de nivel sonoro a lo largo del día de cuyo tipo predominante de emisor es un vehículo automóvil.</p>
+<p>A continuación mostramos un ejemplo en RDF usando la notación RDF Turtle, que describe una observación de nivel sonoro LAeq a lo largo del día de cuyo tipo predominante de emisor es un vehículo automóvil.</p>
 <pre><textarea style="resize:none" readonly id="code1" name="code" rows="50" cols="100">
 ex:Observation_Ld_001_Morning a edintacus:NoiseObservation ;
 	edintacus:referenceInterval edintreferenceinterval:D ;
-    edintacus:emitterPredominantType edintemitterpredominanttype:motorvehicle ;
+    edintacus:noiceRateType edintnoiseratetype:LAeq;
+	edintacus:emitterPredominantType edintemitterpredominanttype:motorvehicle ;
 	rdfs:label "Medición de ruido diurno - 18/03/2026 08:00"@es ;
     rdfs:label "Day-time noise measurement - 18/03/2026 08:00"@en ;
     sosa:madeBySensor ex:Sensor_Noise_001 ;

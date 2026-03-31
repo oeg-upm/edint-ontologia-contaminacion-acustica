@@ -8,10 +8,11 @@
 <p><center><img src="images/diagram.png" style="width:100%;"/><figcaption>
 Figure 1. Main conceptual model of the ontology</figcaption></center></p> 
 
-<p>Next we show an example in RDF, using the RDF Turtle notation, that describes a noise observation during daylight whose emitter predominant type is a motor vehicle.</p>
+<p>Next we show an example in RDF, using the RDF Turtle notation, that describes a noise observation for LAeq during daylight whose emitter predominant type is a motor vehicle.</p>
 <pre><textarea style="resize:none" readonly id="code1" name="code" rows="50" cols="100">
 ex:Observation_Ld_001_Morning a edintacus:NoiseObservation ;
 	edintacus:referenceInterval edintreferenceinterval:D ;
+	edintacus:noiceRateType edintnoiseratetype:LAeq;
     edintacus:emitterPredominantType edintemitterpredominanttype:motorvehicle ;
 	rdfs:label "Medición de ruido diurno - 18/03/2026 08:00"@es ;
     rdfs:label "Day-time noise measurement - 18/03/2026 08:00"@en ;
