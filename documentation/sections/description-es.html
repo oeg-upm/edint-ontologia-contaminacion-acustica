@@ -8,9 +8,35 @@
 <p><center><img src="images/diagram.png" style="width:100%;"/><figcaption>
 Figura 1. Modelo conceptual de la ontología</figcaption></center></p> 
 
-<p>A continuación mostramos un ejemplo en RDF usando la notación RDF Turtle, que describe un "DESCRIPCIÓN DE EJEMPLO".</p>
+<p>A continuación mostramos un ejemplo en RDF usando la notación RDF Turtle, que describe una observación de nivel sonoro a lo largo del día de cuyo tipo predominante de emisor es un vehículo automóvil.</p>
 <pre><textarea style="resize:none" readonly id="code1" name="code" rows="50" cols="100">
-CÓDIGO EJEMPLO
+ex:Observation_Ld_001_Morning a edintacus:NoiseObservation ;
+	edintacus:referenceInterval edintreferenceinterval:D ;
+    edintacus:emitterPredominantType edintemitterpredominanttype:motorvehicle ;
+	rdfs:label "Medición de ruido diurno - 18/03/2026 08:00"@es ;
+    rdfs:label "Day-time noise measurement - 18/03/2026 08:00"@en ;
+    sosa:madeBySensor ex:Sensor_Noise_001 ;
+    sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
+    sosa:resultTime "2026-03-18T08:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T07:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T19:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "65.2"^^xsd:decimal ;
+        qudt:unit unit:DeciB
+    ] .
 
 </textarea></pre>
     <script>
