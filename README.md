@@ -1,19 +1,19 @@
-# Ontología EDINT de Sensores Medioambientales, caso contaminación acústica (EDINT Environmental Sensors Ontology)
+# Ontología EDINT de Sensores Medioambientales, caso Contaminación Acústica (EDINT Environmental Sensors Ontology)
 
 Este repositorio contiene la extensión de la ontología de Sensores Medioambientales para el caso de contaminación acústica.
 
 Ver también: [Ontología EDINT de Sensores Medioambientales](https://github.com/oeg-upm/edint-ontologia-medio-ambiente)
 
 
-# Purpose and scope of the vocabulary
+# Propósito y alcance de la ontología (Purpose and scope of the ontology)
 
  La ontología de Sensores de Medioambiente ha sufrido una pequeña ampliación para reflejar os aspectos específicos de las observaciones de ruido.
 
-# Ontology prefix and namespace
+# Prefijo y espacio de nombres (Prefix and namespace)
 
 El prefijo de la ontología de *Contaminación Acústica* es: `edintacus` publicado bajo el espacio de nombres: [http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/](http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/)
 
-# Ontology Conceptualization Image
+# Modelo conceptual (Ontology conceptualization)
 
 ![Ontology Conceptualization Diagram](diagrams/diagram.png)
 
