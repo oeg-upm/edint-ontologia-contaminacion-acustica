@@ -1,0 +1,116 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix schema: <http://schema.org/> .
+
+@prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
+@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
+@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
+@prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/> .
+@prefix edintacus <http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/> .
+@prefix edintemittertype <http://vocab.linkeddata.es/datosabiertos/kos/edint/EmitterPredominantType/> .
+@prefix edintnoiseratetype <http://vocab.linkeddata.es/datosabiertos/kos/edint/NoiseRateType/> .
+@prefix edintreferenceinterval <http://vocab.linkeddata.es/datosabiertos/kos/edint/ReferenceInterval/> .
+
+@prefix ex: <http://example.org/> .
+
+# ---------------------------------------------------------------------------
+# ESTACION ACUSTICA
+# ---------------------------------------------------------------------------
+
+ex:Station_Acoustic_001 a edintmed:SensorPlatform ;
+    rdfs:label "Estación de monitorización acústica - Plaza Mayor"@es ;
+    rdfs:label "Acoustic monitoring station - Plaza Mayor"@en ;
+    dct:identifier "ACOUSTIC-001-MAD" ;
+    geo:lat "40.4153"^^xsd:float ;
+    geo:long "-3.7074"^^xsd:float ;
+    geo:alt "635"^^xsd:float ;
+    rdfs:comment "Estación urbana fija para monitorización de niveles de ruido ambiental"@es ;
+    rdfs:comment "Fixed urban station for environmental noise level monitoring"@en ;
+    gsp:hasGeometry [
+        a gsp:Geometry ;
+        gsp:asWKT "POINT(-3.7074 40.4153)"^^xsd:string .
+    ] ;
+
+    # estaciones aloja sensores
+    sosa:hosts ex:Sensor_Noise_001 ;
+    sosa:hosts ex:Sensor_Audio_002 .
+
+# ---------------------------------------------------------------------------
+# SENSORS
+# ---------------------------------------------------------------------------
+
+ex:Sensor_Noise_001 a edintmed:EnvironmentalSensor ;
+    rdfs:label "Sensor de ruido ambiental - Sonómetro clase 1"@es ;
+    rdfs:label "Environmental noise sensor - Class 1 sound level meter"@en ;
+    dct:identifier "NOISE-001-CLS1" ;
+    schema:manufacturer ex:Manufacturer_Sonometer ;
+    edintmed:hasSensorType edintkos-sensortypes:NoiseSensor ;
+    sosa:isHostedBy ex:Station_Acoustic_001 ;
+    sosa:observes edintkos-vars:EquivalentSoundPressureLevel ,
+                  edintkos-vars:DayTimeNoiseLevel ,
+                  edintkos-vars:NightTimeNoiseLevel .
+
+ex:Sensor_Audio_002 a edintmed:EnvironmentalSensor ;
+    rdfs:label "Sensor de análisis acústico - Integrador"@es ;
+    rdfs:label "Acoustic analysis sensor - Integrator"@en ;
+    dct:identifier "AUDIO-002-INT" ;
+    schema:manufacturer ex:Manufacturer_Integrador ;
+    edintmed:hasSensorType edintkos-sensortypes:NoiseSensor ;
+    sosa:isHostedBy ex:Station_Acoustic_001 ;
+    sosa:observes edintkos-vars:DayEveningNightNoiseLevel .
+
+# ---------------------------------------------------------------------------
+# OBSERVACIONES - 18/03/2026
+# ---------------------------------------------------------------------------
+
+# Medición ruido LAeq diurno cuyo tipo de emisor predominante es un vehículo automóvil
+ex:Observation_Ld_001_Morning a edintacus:NoiseObservation ;
+	edintacus:referenceInterval edintreferenceinterval:D ;
+	edintacus:noiceRateType edintnoiseratetype:LAeq;
+	edintacus:emitterPredominantType edintemitterpredominanttype:motorvehicle ;
+	rdfs:label "Medición de ruido diurno - 18/03/2026 08:00"@es ;
+    rdfs:label "Day-time noise measurement - 18/03/2026 08:00"@en ;
+    sosa:madeBySensor ex:Sensor_Noise_001 ;
+    sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
+    sosa:resultTime "2026-03-18T08:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T07:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T19:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "65.2"^^xsd:decimal ;
+        qudt:unit unit:DeciB
+    ] .
+
+# ---------------------------------------------------------------------------
+# MANUFACTURERS
+# ---------------------------------------------------------------------------
+
+ex:Manufacturer_Sonometer a schema:Organization ;
+    rdfs:label "Sonometer Technologies"@en ;
+    rdfs:label "Tecnologías Sonómetro"@es .
+
+ex:Manufacturer_Integrador a schema:Organization ;
+    rdfs:label "Acoustic Integrators Ltd."@en ;
+    rdfs:label "Integradores Acústicos S.L."@es .
+
