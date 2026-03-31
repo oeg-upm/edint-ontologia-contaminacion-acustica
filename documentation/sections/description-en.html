@@ -1,0 +1,32 @@
+<h2 id="desc" class="list">EDINT Noise Pollution Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">
+
+<p>As shown in Figure 1, this ontology extends the EDINT <a href= "http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/">environmental ontology</a> by adding three object properties to specify particular features to a <a href="#NoiseObservation">Noise observation</a>: <a href="#emitterPredominantType" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/emitterPredominantType">predominant type of noise emitter</a>, <a href="#referenceInterval" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/referenceInterval">reference interval</a> and <a href="#noiseRateType" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/noiseRateType">type of noise or vibration rate</a>, which are connected to their corresponding SKOS concept schemes: <a href="<http://vocab.linkeddata.es/datosabiertos/kos/edint/EmitterPredominantType>" target="_blank">Emitter Predominant Type</a>, <a href="<http://vocab.linkeddata.es/datosabiertos/kos/edint/referenceInterval>" target="_blank">Reference Interval</a> and <a href="<http://vocab.linkeddata.es/datosabiertos/kos/edint/NoiseRateType>" target="_blank">Noise Rate Type</a>
+</p>
+    
+<p><center><img src="images/diagram.png" style="width:100%;"/><figcaption>
+Figure 1. Main conceptual model of the ontology</figcaption></center></p> 
+
+<p>Next we show an example in RDF, using the RDF Turtle notation, that describes "EXAMPLE DESCRIPTION".</p>
+<pre><textarea style="resize:none" readonly id="code1" name="code" rows="50" cols="100">
+EXAMPLE CODE
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/contaminacionacustica/sensor/1002&gt; a edintmed:EnvironmentalSensor ;
+  dct:identifier "0001"@es ;
+  schema:name "Plaza del Carmen"@es ;
+  schema:address &lt;http://vocab.ciudadesabiertas.es/recurso/urbanismo-infraestructuras/direccion-postal/dp28-0001&gt; ;
+  sf:hasGeometry &lt;http://vocab.ciudadesabiertas.es/recurso/medio-ambiente/contaminacion-acustica/punto/1&gt; .
+&lt;http://vocab.ciudadesabiertas.es/recurso/medio-ambiente/contaminacion-acustica/punto/1&gt; geo:long "-3.7031662"^^xsd:float ;
+  geo:lat "40.4192091"^^xsd:float ;
+  geo_core:xETRS89 "440346.361892"^^xsd:float ;
+  geo_core:yETRS89 "4474524.35713"^^xsd:float .
+</textarea></pre>
+    <script>
+      var editor1 = CodeMirror.fromTextArea(document.getElementById("code1"), {
+        mode: "text/turtle",
+        matchBrackets: true
+      });
+ </script>
+ 
+</span>
+
