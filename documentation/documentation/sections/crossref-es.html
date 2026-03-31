@@ -1,0 +1,111 @@
+<h2 id="crossreference" class="list">T&eacute;rminos de Ontología EDINT de Contaminación Acústica para clases, propiedades de objeto y propiedades de datos <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad definida por Ontología EDINT de Contaminación Acústica.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Clases</h3>
+ <ul class="hlist">
+  <li><a href="#NoiseObservation" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/NoiseObservation">Observación acústica</a></li>
+ </ul>
+ <div class="entity" id="NoiseObservation">
+  <h3>Observación acústica<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/NoiseObservation</p>
+  <div class="comment">
+   <span class="markdown">Una observación de una propiedad acústica realizada por un sensor acústico</span>
+  </div>
+  <dl class="description">
+   <dt>
+    tiene superclases
+   </dt>
+   <dd>
+    <a href="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation" target="_blank" title="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation">Environmental Observation</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    en dominio de
+   </dt>
+   <dd>
+    <a href="#referenceInterval" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/referenceInterval">intervalo de referencia</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#emitterPredominantType" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/emitterPredominantType">tipo de emisor de ruido predominante</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#noiseRateType" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/noiseRateType">tipo de índice de ruido o vibración</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h2>Propiedades entre objetos</h2>
+ <ul class="hlist">
+  <li><a href="#referenceInterval" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/referenceInterval">intervalo de referencia</a></li>
+  <li><a href="#emitterPredominantType" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/emitterPredominantType">tipo de emisor de ruido predominante</a></li>
+  <li><a href="#noiseRateType" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/noiseRateType">tipo de índice de ruido o vibración</a></li>
+ </ul>
+ <div class="entity" id="referenceInterval">
+  <h3>intervalo de referencia<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/referenceInterval</p>
+  <div class="comment">
+   <span class="markdown">Vincula una observación acústica a su periodo de medión</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#NoiseObservation" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/NoiseObservation">Observación acústica</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="clase">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank" title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="logic">value</span> <a href="http://vocab.linkeddata.es/datosabiertos/kos/edint/ReferenceInterval" target="_blank" title="http://vocab.linkeddata.es/datosabiertos/kos/edint/ReferenceInterval">Reference Interval</a> <sup class="type-ni" title="Individuo">ni</sup>)
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="emitterPredominantType">
+  <h3>tipo de emisor de ruido predominante<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/emitterPredominantType</p>
+  <div class="comment">
+   <span class="markdown">Vincula una observación acústica a su tipo predominante de emisor</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#NoiseObservation" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/NoiseObservation">Observación acústica</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="clase">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank" title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="logic">value</span> <a href="http://vocab.linkeddata.es/datosabiertos/kos/edint/EmitterPredominantType" target="_blank" title="http://vocab.linkeddata.es/datosabiertos/kos/edint/EmitterPredominantType">Emitter Predominant Type</a> <sup class="type-ni" title="Individuo">ni</sup>)
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="noiseRateType">
+  <h3>tipo de índice de ruido o vibración<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/noiseRateType</p>
+  <div class="comment">
+   <span class="markdown">Vincula una observación acústica a su tipo de índice de ruido o vibración</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#NoiseObservation" title="http://vocab.linkeddata.es/datosabiertos/def/contaminacionacustica/NoiseObservation">Observación acústica</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="clase">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank" title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="logic">value</span> <a href="http://vocab.linkeddata.es/datosabiertos/kos/edint/NoiseRateType/" target="_blank" title="http://vocab.linkeddata.es/datosabiertos/kos/edint/NoiseRateType/">http://vocab.linkeddata.es/datosabiertos/kos/edint/NoiseRateType/</a> <sup class="type-ni" title="Individuo">ni</sup>)
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div id="legend">
+<h2>Leyenda <span class="backlink"> volver a <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Clases">c</sup>: Clases <br/>
+<sup class="type-op" title="Propiedades de objeto">op</sup>: Propiedades de objeto <br/>
+</div>
+</div>
